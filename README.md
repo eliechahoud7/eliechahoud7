@@ -12,7 +12,8 @@
 </p>
 
 <p align="center">
-  🎯 <strong>Looking for an AI / ML internship starting February 2027 in France</strong>
+  🎯 <strong>**Looking for an AI / Machine Learning / Data Science internship starting February 2027 in France.**
+</strong>
 </p>
 
 ---
