@@ -22,6 +22,12 @@ Artificial Intelligence · Machine Learning · Data Science · Generative AI · 
 
 I build end-to-end machine learning systems, from data pipelines and model training to serving, monitoring and evaluation. My projects cover computer vision, LLM fine-tuning, retrieval-augmented generation and financial risk modelling. They share one principle: **honest evaluation**. That means held-out test sets scored once, leakage checks, reproducible pipelines, and limitations stated clearly next to the results.
 
+## 🌐 My Portfolio
+
+Explore my projects, technical skills, and experience:
+
+[**View My Portfolio →**](https://elie-chahoud-portfolio.vercel.app/)
+
 ## Education
 
 **Master 2 Informatique pour la Science des Données (ISD)** — Université Paris-Saclay
