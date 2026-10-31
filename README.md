@@ -1,8 +1,8 @@
 <h1 align="center">Elie Chahoud</h1>
 
 <p align="center">
-  <strong>Master 2 AI & Data Science student · AI &amp; Machine Learning</strong><br>
-  Data Science · Generative AI · MLOps
+  <strong>**Master's Student in AI & Data Science | Paris-Saclay**</strong><br>
+Artificial Intelligence · Machine Learning · Data Science · Generative AI · MLOps
 </p>
 
 <p align="center">
