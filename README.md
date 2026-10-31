@@ -1,12 +1,13 @@
 <h1 align="center">Elie Chahoud</h1>
 
 <p align="center">
-  <strong>AI &amp; Machine Learning Engineer</strong><br>
+  <strong>Master 2 Data Science student · AI &amp; Machine Learning</strong><br>
   Data Science · Generative AI · MLOps
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/eliechahoudd/"><img src="https://img.shields.io/badge/LinkedIn-eliechahoudd-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://github.com/eliechahoud7"><img src="https://img.shields.io/badge/GitHub-eliechahoud7-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
   <a href="mailto:elie.chahoud70@gmail.com"><img src="https://img.shields.io/badge/Email-elie.chahoud70%40gmail.com-555555?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
@@ -92,7 +93,7 @@ A local, CPU-only research system combining market-stress scoring, company-distr
 
 - **Company distress, held-out test (1,364 companies, 44 positives):** XGBoost average precision **0.487**, ROC-AUC **0.958** (base-rate AP 0.032)
 - **Market stress, held-out test 2015–2026:** every model beat the base rate (AP 0.212), but the signal is **weak**. The best result came from a simple downside-volatility rule (AP 0.363), and no fitted model clearly beat it
-- **Rigour:** chronological splits with purge gaps, frozen checksum-verified artifacts, ~360 tests, 35 documented design decisions
+- **Rigour:** chronological splits with purge gaps, frozen checksum-verified artifacts, ~380 tests, 37 documented design decisions (D1–D37)
 - **RAG assistant:** cited answers with grounding checks; it refuses when the evidence is insufficient
 
 <sub>**Limitations:** this is a research and educational project, not a forecasting tool or financial advice. Company-distress labels are undocumented in the source dataset, so those results are classification performance, not confirmed bankruptcy predictions. RAG retrieval metrics (hit@5 0.846) come from the development set only and are optimistic.</sub>
@@ -105,7 +106,7 @@ A local, CPU-only research system combining market-stress scoring, company-distr
 
 ### 📄 Intelligent Document Assistant — Bilingual RAG over PDFs
 
-<a href="https://github.com/eliechahoud7/document-assistant-rag"><img src="assets/document-assistant-answer-with-sources.png" alt="Document Assistant answering a question about a PDF with page-level source citations" width="100%"></a>
+<a href="https://github.com/eliechahoud7/document-assistant-rag"><img src="assets/document-assistant-rag-answer.png" alt="Document Assistant answering a question about a public MIT OpenCourseWare lecture, with two cited sources (lecture2.pdf, page 3)" width="100%"></a>
 
 A French/English question-answering assistant for PDF documents. It answers only from retrieved passages, cites the real file and page, and abstains when the documents don't contain the answer.
 
@@ -123,5 +124,6 @@ A French/English question-answering assistant for PDF documents. It answers only
 
 <p align="center">
   <a href="https://www.linkedin.com/in/eliechahoudd/">LinkedIn</a> ·
+  <a href="https://github.com/eliechahoud7">GitHub</a> ·
   <a href="mailto:elie.chahoud70@gmail.com">elie.chahoud70@gmail.com</a>
 </p>
