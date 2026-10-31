@@ -1,7 +1,7 @@
 <h1 align="center">Elie Chahoud</h1>
 
 <p align="center">
-  <strong>Master 2 Data Science student · AI &amp; Machine Learning</strong><br>
+  <strong>Master 2 AI & Data Science student · AI &amp; Machine Learning</strong><br>
   Data Science · Generative AI · MLOps
 </p>
 
