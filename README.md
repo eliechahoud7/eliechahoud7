@@ -33,7 +33,7 @@ Explore my projects, technical skills, and experience:
 
 ## Education
 
-**Master 2 Informatique pour la Science des Données (ISD)** — Université Paris-Saclay
+**Master 2 — Informatique pour la Science des Données (ISD)** — Université Paris-Saclay
 Double-degree program with **Saint Joseph University of Beirut (USJ)**
 
 ## Technical skills
