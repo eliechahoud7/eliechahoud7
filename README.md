@@ -1,8 +1,8 @@
 <h1 align="center">Elie Chahoud</h1>
 
 <p align="center">
-  <strong>Master's Student in AI & Data Science | Paris-Saclay</strong><br>
-Artificial Intelligence · Machine Learning · Data Science · Generative AI · MLOps
+  <strong>Master's Student in AI & Data Science · Université Paris-Saclay</strong><br>
+  Artificial Intelligence · Machine Learning · Generative AI · Data Science · Data Engineering · MLOps
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@ Artificial Intelligence · Machine Learning · Data Science · Generative AI · 
 </p>
 
 <p align="center">
-  🎯 <strong>Looking for an AI / Machine Learning / Data Science / Data Engineering internship starting February 2027 in France.</strong>
+  🎯 <strong>Seeking an internship in these fields, starting February 2027 in France.</strong>
 </p>
 
 ---
