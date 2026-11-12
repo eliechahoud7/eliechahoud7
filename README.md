@@ -1,7 +1,7 @@
 <h1 align="center">Elie Chahoud</h1>
 
 <p align="center">
-  <strong>**Master's Student in AI & Data Science | Paris-Saclay**</strong><br>
+  <strong>Master's Student in AI & Data Science | Paris-Saclay</strong><br>
 Artificial Intelligence · Machine Learning · Data Science · Generative AI · MLOps
 </p>
 
@@ -12,15 +12,18 @@ Artificial Intelligence · Machine Learning · Data Science · Generative AI · 
 </p>
 
 <p align="center">
-  🎯 <strong>**Looking for an AI / Machine Learning / Data Science internship starting February 2027 in France.**
-</strong>
+  🎯 <strong>Looking for an AI / Machine Learning / Data Science / Data Engineering internship starting February 2027 in France.</strong>
 </p>
 
 ---
 
 ## About me
 
-I build end-to-end machine learning systems, from data pipelines and model training to serving, monitoring and evaluation. My projects cover computer vision, LLM fine-tuning, retrieval-augmented generation and financial risk modelling. They share one principle: **honest evaluation**. That means held-out test sets scored once, leakage checks, reproducible pipelines, and limitations stated clearly next to the results.
+I build end-to-end machine learning systems, from data pipelines and model training to serving, monitoring and evaluation. My main projects cover computer vision, LLM fine-tuning, retrieval-augmented generation and financial risk modelling.
+
+I also work on the data side that these systems depend on. That includes warehouses and layered pipelines (PostgreSQL/PostGIS, Databricks, dbt, Airflow), statistical and geospatial analysis, forecasting and BI dashboards.
+
+All of my projects share one principle: **honest evaluation**. That means held-out test sets scored once, leakage checks, reproducible and validated pipelines, and limitations stated clearly next to the results.
 
 ## 🌐 My Portfolio
 
@@ -35,14 +38,19 @@ Double-degree program with **Saint Joseph University of Beirut (USJ)**
 
 ## Technical skills
 
+Technologies I have used in the projects below:
+
 | Area | Tools |
 |---|---|
-| **Languages & data** | Python, pandas, NumPy, scikit-learn, Plotly |
-| **Machine & deep learning** | PyTorch, torchvision (transfer learning), XGBoost, logistic regression, cross-validation |
-| **Generative AI & LLMs** | Hugging Face Transformers, PEFT / QLoRA, TRL, bitsandbytes, LangChain, LangGraph, Ollama, Google Gemini |
+| **Programming languages** | Python, SQL |
+| **AI & machine learning** | PyTorch, torchvision (transfer learning), scikit-learn, XGBoost, logistic regression, random forests, K-Means, cross-validation, SHAP |
+| **Generative AI & NLP** | Hugging Face Transformers, PEFT / QLoRA, TRL, bitsandbytes, LangChain, LangGraph, Ollama, Google Gemini |
 | **Retrieval & RAG** | sentence-transformers, cross-encoder reranking, FAISS, ChromaDB, retrieval evaluation (hit@k, MRR) |
+| **Data engineering** | Databricks (Delta Lake, Unity Catalog), dbt, Apache Airflow, PySpark, layered pipelines with checksums and data-quality checks |
+| **Data science & analytics** | pandas, NumPy, SciPy, statsmodels, GeoPandas, Shapely, time-series forecasting |
+| **Databases** | PostgreSQL, PostGIS, Databricks SQL |
 | **MLOps & deployment** | MLflow, DVC, FastAPI, Docker / Compose, GitHub Actions, Prometheus, Grafana, Evidently |
-| **Apps & testing** | Streamlit, pytest |
+| **Apps, visualization & testing** | Streamlit, Power BI, Plotly, Matplotlib, Jupyter, pytest |
 
 ---
 
@@ -126,6 +134,47 @@ A French/English question-answering assistant for PDF documents. It answers only
 `RAG` `ChromaDB` `sentence-transformers` `Google Gemini` `Streamlit` `pytest`
 
 **[Repository →](https://github.com/eliechahoud7/document-assistant-rag)** · **[Live demo →](https://document-assistant-rag-elie.streamlit.app)**
+
+---
+
+## More projects
+
+Data engineering, data science and geospatial projects.
+
+### 🚦 Road Safety Intelligence — France
+
+A reproducible pipeline on the official French road-accident database (BAAC, ONISR, 2019–2025). It covers checksummed data acquisition, data-quality profiling, geographic validation against IGN boundaries, a PostgreSQL/PostGIS warehouse, statistical and geospatial hotspot analysis, and a Streamlit dashboard.
+
+- **Scale & quality:** 361,593 injury accidents in metropolitan France, 99.8% with exact or ≤ 500 m validated coordinates, 509 automated validation checks
+- **Hotspots:** 1% of non-empty 1 km cells hold 32.5% of accidents but only 6.2% of fatal accidents
+
+<sub>**Limitations:** results describe police-recorded injury accidents and where they concentrate, not risk, because no traffic-volume (exposure) data is available.</sub>
+
+`PostgreSQL` `PostGIS` `GeoPandas` `Shapely` `SciPy` `Streamlit` `Docker`
+
+**[Repository →](https://github.com/eliechahoud7/road-safety-intelligence)**
+
+### 🎓 Career Intelligence
+
+A data platform that integrates six official French open datasets (ROME, ONISEP, Formacode, BMO and others) into a Databricks Bronze → Silver → Gold → Search model. It serves the data through a French-language Streamlit app for searching occupations, skills and training paths.
+
+- **Serving:** 22 read-only SQL query contracts behind four application pages
+- **Validation:** 622 offline tests and 55 live Databricks tests passed; 325/325 SQL data-quality checks pass
+
+`Databricks` `Delta Lake` `Unity Catalog` `SQL` `Streamlit` `pytest`
+
+**[Repository →](https://github.com/eliechahoud7/career-intelligence)**
+
+### 🛒 Retail Intelligence
+
+An end-to-end analytics project on the Olist Brazilian e-commerce dataset (about 100,000 orders, 2016–2018). It builds a checksummed, layered pipeline into a PostgreSQL star schema with dbt marts, PySpark workloads and an Airflow DAG. On top of that come customer analytics, predictive modelling, forecasting, SHAP explanations and five Power BI dashboards validated against the warehouse.
+
+- **Delivery-time regression (random forest):** MAE 4.37 days, 17% better than the median baseline
+- **14-day order-volume forecast (Holt-Winters):** WAPE 0.214, 6.9% better than the seasonal-naive baseline
+
+`PostgreSQL` `dbt` `PySpark` `Apache Airflow` `scikit-learn` `statsmodels` `SHAP` `Power BI`
+
+**[Repository →](https://github.com/eliechahoud7/retail-intelligence)**
 
 ---
 
