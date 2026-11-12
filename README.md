@@ -38,19 +38,16 @@ Double-degree program with **Saint Joseph University of Beirut (USJ)**
 
 ## Technical skills
 
-Technologies I have used in the projects below:
+Technical skills, tools and methods developed through academic work and practical projects.
 
 | Area | Tools |
 |---|---|
-| **Programming languages** | Python, SQL |
-| **AI & machine learning** | PyTorch, torchvision (transfer learning), scikit-learn, XGBoost, logistic regression, random forests, K-Means, cross-validation, SHAP |
-| **Generative AI & NLP** | Hugging Face Transformers, PEFT / QLoRA, TRL, bitsandbytes, LangChain, LangGraph, Ollama, Google Gemini |
-| **Retrieval & RAG** | sentence-transformers, cross-encoder reranking, FAISS, ChromaDB, retrieval evaluation (hit@k, MRR) |
-| **Data engineering** | Databricks (Delta Lake, Unity Catalog), dbt, Apache Airflow, PySpark, layered pipelines with checksums and data-quality checks |
-| **Data science & analytics** | pandas, NumPy, SciPy, statsmodels, GeoPandas, Shapely, time-series forecasting |
-| **Databases** | PostgreSQL, PostGIS, Databricks SQL |
-| **MLOps & deployment** | MLflow, DVC, FastAPI, Docker / Compose, GitHub Actions, Prometheus, Grafana, Evidently |
-| **Apps, visualization & testing** | Streamlit, Power BI, Plotly, Matplotlib, Jupyter, pytest |
+| **Data Science & Machine Learning** | pandas, NumPy, SciPy, statsmodels, scikit-learn, XGBoost, Statistics & Hypothesis Testing, EDA, Feature Engineering, Regression, Classification (logistic regression, random forests), Clustering (K-Means), Cross-validation, Time Series & Forecasting, Model Evaluation, SHAP |
+| **Deep Learning & Computer Vision** | PyTorch, torchvision, TensorFlow, Transfer Learning, CNNs, Computer Vision, OpenCV |
+| **NLP & Generative AI** | LLMs, NLP, Fine-tuning (QLoRA / PEFT), Hugging Face Transformers, TRL, bitsandbytes, LangChain, LangGraph, Ollama, Google Gemini API, RAG, Embeddings & Vector Search, Sentence Transformers, Cross-encoder Reranking, FAISS, ChromaDB, Retrieval Evaluation (hit@k, MRR) |
+| **MLOps & AI Engineering** | MLflow, DVC, Docker & Docker Compose, GitHub Actions, CI/CD, FastAPI, Prometheus, Grafana, Evidently AI (drift detection), Testing (pytest) |
+| **Programming & Tools** | Python, SQL, PL/SQL, C, C++, Java, Git, GitHub, GitLab, Jupyter, Linux (WSL2) |
+| **Data Engineering & Analytics** | ETL/ELT Pipelines, Data Modeling (star schema, medallion), Data Warehousing, Data Quality & Validation, PostgreSQL, PostGIS, Databricks (Delta Lake, Unity Catalog, Databricks SQL), PySpark, Apache Airflow, dbt, GeoPandas, Shapely, Power BI, Plotly, Matplotlib, Seaborn, Streamlit |
 
 ---
 
