@@ -67,7 +67,7 @@ A six-class scene classifier (ResNet-18 transfer learning) packaged with the too
 - **Serving & ops:** FastAPI inference API and Streamlit client in hardened Docker containers, Prometheus metrics with unit-tested alert rules, Grafana dashboard, CI on GitHub Actions
 - **Drift monitoring:** Evidently compares unlabelled images with validation data. It found no drift on real data and flagged simulated darkening and blur
 
-<sub>**Limitations:** the main remaining confusions are mountain ↔ glacier and street ↔ buildings. The API has no authentication and is designed to run on localhost only. Next steps: add authentication and TLS before any network exposure, log live inputs for drift monitoring, and add embedding-based drift detection.</sub>
+<sub>**Limitations:** the main remaining confusions are mountain ↔ glacier and street ↔ buildings. The API has no authentication and is designed to run on localhost only.<br>**Future work:** add authentication and TLS before any network exposure, log live inputs for drift monitoring, and add embedding-based drift detection.</sub>
 
 `PyTorch` `MLflow` `DVC` `FastAPI` `Streamlit` `Docker` `GitHub Actions` `Prometheus` `Grafana` `Evidently`
 
@@ -92,7 +92,7 @@ QLoRA fine-tuning of **Qwen2.5-3B-Instruct** to extract every product aspect in 
 - **Evaluation discipline:** checkpoint selected on validation only, test split scored once, leakage-checked review-level splits with SHA-256 checksums, 280+ pytest tests
 - **Deployment:** token-protected FastAPI GPU service (Kaggle / Colab T4) behind a Cloudflare tunnel, with a Streamlit front end
 
-<sub>**Limitations:** scores come from the final Colab evaluation run. Model weights and evaluation outputs are not committed, so they can't be recomputed from the repository alone. The model was trained on short SemEval-2014 laptop reviews and invented 5 aspects on the test split. The [live app](https://customer-feedback-intelligence-amgrz9rariauf2k7jff2t8.streamlit.app/) only works while the GPU backend is running. Next steps: move the API to an always-on GPU host or a named Cloudflare tunnel for a stable URL, add aspect-free and out-of-domain training examples, and report bootstrap confidence intervals.</sub>
+<sub>**Limitations:** scores come from the final Colab evaluation run. Model weights and evaluation outputs are not committed, so they can't be recomputed from the repository alone. The model was trained on short SemEval-2014 laptop reviews and invented 5 aspects on the test split. The [live app](https://customer-feedback-intelligence-amgrz9rariauf2k7jff2t8.streamlit.app/) only works while the GPU backend is running.<br>**Future work:** move the API to an always-on GPU host or a named Cloudflare tunnel for a stable URL, add aspect-free and out-of-domain training examples, and report bootstrap confidence intervals.</sub>
 
 `Transformers` `PEFT` `TRL` `bitsandbytes` `FastAPI` `Streamlit` `pytest`
 
@@ -111,7 +111,7 @@ A local, CPU-only research system combining market-stress scoring, company-distr
 - **Rigour:** chronological splits with purge gaps, frozen checksum-verified artifacts, ~380 tests, 37 documented design decisions (D1–D37)
 - **RAG assistant:** cited answers with grounding checks; it refuses when the evidence is insufficient
 
-<sub>**Limitations:** this is a research and educational project, not a forecasting tool or financial advice. Company-distress labels are undocumented in the source dataset, so those results are classification performance, not confirmed bankruptcy predictions. RAG retrieval metrics (hit@5 0.846) come from the development set only and are optimistic. Next steps: test new models on market data collected after the frozen snapshot, calibrate the company-distress probabilities, and confirm the RAG metrics on a new held-out question set.</sub>
+<sub>**Limitations:** this is a research and educational project, not a forecasting tool or financial advice. Company-distress labels are undocumented in the source dataset, so those results are classification performance, not confirmed bankruptcy predictions. RAG retrieval metrics (hit@5 0.846) come from the development set only and are optimistic.<br>**Future work:** test new models on market data collected after the frozen snapshot, calibrate the company-distress probabilities, and confirm the RAG metrics on a new held-out question set.</sub>
 
 `scikit-learn` `XGBoost` `LangGraph` `LangChain` `FAISS` `sentence-transformers` `Ollama` `Streamlit` `Plotly`
 
@@ -129,7 +129,7 @@ A French/English question-answering assistant for PDF documents. It answers only
 - **Engineering:** ports-and-adapters architecture, 10 architecture decision records, reproducible retrieval and generation evaluation harness
 - **Preliminary evaluation (20 EN/FR questions):** 14/15 answerable questions correct, 5/5 unanswerable questions correctly rejected, citation precision 100%, citation recall 94.74%
 
-<sub>**Limitations:** the evaluation set is small and self-annotated, and scoring is automatic, partly keyword-based, and not human-reviewed. Treat these results as indicative, not a benchmark. Next steps: confirm the generation results on an independent question set with repeated runs and human review, and add optional OCR for scanned PDFs.</sub>
+<sub>**Limitations:** the evaluation set is small and self-annotated, and scoring is automatic, partly keyword-based, and not human-reviewed. Treat these results as indicative, not a benchmark.<br>**Future work:** confirm the generation results on an independent question set with repeated runs and human review, and add optional OCR for scanned PDFs.</sub>
 
 `RAG` `ChromaDB` `sentence-transformers` `Google Gemini` `Streamlit` `pytest`
 
@@ -148,7 +148,7 @@ A reproducible pipeline on the official French road-accident database (BAAC, ONI
 - **Severity:** night accidents are about twice as often fatal (10.0% vs 5.2%), and accidents outside built-up areas are 3.5× as often fatal (10.3% vs 3.0%; Cramér's V = 0.26)
 - **Warehouse:** layered PostGIS schema (staging → clean → analytics) with lineage and no double counting across one-to-many tables, served to a six-section Streamlit dashboard
 
-<sub>**Limitations:** results describe police-recorded injury accidents and where they concentrate, not risk, because no traffic-volume (exposure) data is available. The analysis is descriptive only, with no causal claims or predictive modelling. Next steps: integrate traffic-volume data to estimate risk, apply the documented coordinate corrections, and extend the pipeline to new BAAC releases.</sub>
+<sub>**Limitations:** results describe police-recorded injury accidents and where they concentrate, not risk, because no traffic-volume (exposure) data is available. The analysis is descriptive only, with no causal claims or predictive modelling.<br>**Future work:** integrate traffic-volume data to estimate risk, apply the documented coordinate corrections, and extend the pipeline to new BAAC releases.</sub>
 
 `PostgreSQL` `PostGIS` `GeoPandas` `Shapely` `SciPy` `Streamlit` `Docker`
 
@@ -166,7 +166,7 @@ A data platform that integrates six official French open datasets (ROME, ONISEP,
 - **Serving:** 22 read-only SQL query contracts behind four application pages
 - **Validation:** 622 offline tests and 55 live Databricks tests passed; 325/325 SQL data-quality checks pass
 
-<sub>**Limitations:** the project runs on Databricks Free Edition and the application runs locally, with no public deployment. BMO recruitment figures are minimums because of statistical secrecy, and ONISEP training links cover 392 of the 1,923 ROME occupations. Next steps: move to a platform whose terms allow public deployment, expose DARES data once its licence is confirmed, and schedule refreshes when sources publish new releases.</sub>
+<sub>**Limitations:** the project runs on Databricks Free Edition and the application runs locally, with no public deployment. BMO recruitment figures are minimums because of statistical secrecy, and ONISEP training links cover 392 of the 1,923 ROME occupations.<br>**Future work:** move to a platform whose terms allow public deployment, expose DARES data once its licence is confirmed, and schedule refreshes when sources publish new releases.</sub>
 
 `Databricks` `Delta Lake` `Unity Catalog` `SQL` `Streamlit` `pytest`
 
@@ -185,7 +185,7 @@ An end-to-end analytics project on the Olist Brazilian e-commerce dataset (about
 - **14-day order-volume forecast (Holt-Winters):** WAPE 0.214, 6.9% better than the seasonal-naive baseline
 - **BI:** five Power BI dashboards with every page KPI, slicer and drill-through cross-checked against PostgreSQL
 
-<sub>**Limitations:** the data is observational, so findings are descriptive and SHAP explains the models, not causes. Orders after 21 August 2018 are incomplete in the Olist extract. Late-delivery classification is weak (PR-AUC 0.088 against a 4.40% base rate). Next steps: containerise PostgreSQL, Airflow and Spark, add CI for the unit tests and `dbt build`, and persist and version the trained models (for example with MLflow).</sub>
+<sub>**Limitations:** the data is observational, so findings are descriptive and SHAP explains the models, not causes. Orders after 21 August 2018 are incomplete in the Olist extract. Late-delivery classification is weak (PR-AUC 0.088 against a 4.40% base rate).<br>**Future work:** containerise PostgreSQL, Airflow and Spark, add CI for the unit tests and `dbt build`, and persist and version the trained models (for example with MLflow).</sub>
 
 `PostgreSQL` `dbt` `PySpark` `Apache Airflow` `scikit-learn` `statsmodels` `SHAP` `Power BI`
 
