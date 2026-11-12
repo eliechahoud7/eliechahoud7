@@ -67,7 +67,7 @@ A six-class scene classifier (ResNet-18 transfer learning) packaged with the too
 - **Serving & ops:** FastAPI inference API and Streamlit client in hardened Docker containers, Prometheus metrics with unit-tested alert rules, Grafana dashboard, CI on GitHub Actions
 - **Drift monitoring:** Evidently compares unlabelled images with validation data. It found no drift on real data and flagged simulated darkening and blur
 
-<sub>**Limitations & Future Work:** the main remaining confusions are mountain ↔ glacier and street ↔ buildings. The API has no authentication and is designed to run on localhost only. Next steps: authentication and TLS before any network exposure, live input logging for drift monitoring, and embedding-based drift detection.</sub>
+<sub>**Limitations & Future Work:** the main remaining confusions are mountain ↔ glacier and street ↔ buildings. The API has no authentication and is designed to run on localhost only. Next steps: add authentication and TLS before any network exposure, log live inputs for drift monitoring, and add embedding-based drift detection.</sub>
 
 `PyTorch` `MLflow` `DVC` `FastAPI` `Streamlit` `Docker` `GitHub Actions` `Prometheus` `Grafana` `Evidently`
 
@@ -92,7 +92,7 @@ QLoRA fine-tuning of **Qwen2.5-3B-Instruct** to extract every product aspect in 
 - **Evaluation discipline:** checkpoint selected on validation only, test split scored once, leakage-checked review-level splits with SHA-256 checksums, 280+ pytest tests
 - **Deployment:** token-protected FastAPI GPU service (Kaggle / Colab T4) behind a Cloudflare tunnel, with a Streamlit front end
 
-<sub>**Limitations & Future Work:** scores come from the final Colab evaluation run. Model weights and evaluation outputs are not committed, so they can't be recomputed from the repository alone. The model was trained on short SemEval-2014 laptop reviews and invented 5 aspects on the test split. The [live app](https://customer-feedback-intelligence-amgrz9rariauf2k7jff2t8.streamlit.app/) only works while the GPU backend is running. Next steps: a stable, always-on GPU backend, aspect-free and out-of-domain training examples, and bootstrap confidence intervals.</sub>
+<sub>**Limitations & Future Work:** scores come from the final Colab evaluation run. Model weights and evaluation outputs are not committed, so they can't be recomputed from the repository alone. The model was trained on short SemEval-2014 laptop reviews and invented 5 aspects on the test split. The [live app](https://customer-feedback-intelligence-amgrz9rariauf2k7jff2t8.streamlit.app/) only works while the GPU backend is running. Next steps: move the API to an always-on GPU host or a named Cloudflare tunnel for a stable URL, add aspect-free and out-of-domain training examples, and report bootstrap confidence intervals.</sub>
 
 `Transformers` `PEFT` `TRL` `bitsandbytes` `FastAPI` `Streamlit` `pytest`
 
@@ -166,7 +166,7 @@ A data platform that integrates six official French open datasets (ROME, ONISEP,
 - **Serving:** 22 read-only SQL query contracts behind four application pages
 - **Validation:** 622 offline tests and 55 live Databricks tests passed; 325/325 SQL data-quality checks pass
 
-<sub>**Limitations & Future Work:** the project runs on Databricks Free Edition and the application runs locally, with no public deployment. BMO recruitment figures are minimums because of statistical secrecy, and ONISEP training links cover 392 of the 1,923 ROME occupations. Next steps: a platform whose terms allow public deployment, DARES data once its licence is confirmed, and scheduled refreshes as sources publish new releases.</sub>
+<sub>**Limitations & Future Work:** the project runs on Databricks Free Edition and the application runs locally, with no public deployment. BMO recruitment figures are minimums because of statistical secrecy, and ONISEP training links cover 392 of the 1,923 ROME occupations. Next steps: move to a platform whose terms allow public deployment, expose DARES data once its licence is confirmed, and schedule refreshes when sources publish new releases.</sub>
 
 `Databricks` `Delta Lake` `Unity Catalog` `SQL` `Streamlit` `pytest`
 
@@ -185,7 +185,7 @@ An end-to-end analytics project on the Olist Brazilian e-commerce dataset (about
 - **14-day order-volume forecast (Holt-Winters):** WAPE 0.214, 6.9% better than the seasonal-naive baseline
 - **BI:** five Power BI dashboards with every page KPI, slicer and drill-through cross-checked against PostgreSQL
 
-<sub>**Limitations & Future Work:** the data is observational, so findings are descriptive and SHAP explains the models, not causes. Orders after 21 August 2018 are incomplete in the Olist extract. Late-delivery classification is weak (PR-AUC 0.088 against a 4.40% base rate). Next steps: containerise the stack, add CI for the unit tests and `dbt build`, and persist the trained models with MLflow.</sub>
+<sub>**Limitations & Future Work:** the data is observational, so findings are descriptive and SHAP explains the models, not causes. Orders after 21 August 2018 are incomplete in the Olist extract. Late-delivery classification is weak (PR-AUC 0.088 against a 4.40% base rate). Next steps: containerise PostgreSQL, Airflow and Spark, add CI for the unit tests and `dbt build`, and persist and version the trained models (for example with MLflow).</sub>
 
 `PostgreSQL` `dbt` `PySpark` `Apache Airflow` `scikit-learn` `statsmodels` `SHAP` `Power BI`
 
