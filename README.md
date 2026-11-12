@@ -100,9 +100,9 @@ QLoRA fine-tuning of **Qwen2.5-3B-Instruct** to extract every product aspect in 
 
 ---
 
-### 📉 AI Financial Crisis Detector — Offline financial risk research system
+### 📉 Financial Crisis Detector — Offline financial risk research system
 
-<a href="https://github.com/eliechahoud7/AI-Financial-Crisis-Detector"><img src="https://raw.githubusercontent.com/eliechahoud7/AI-Financial-Crisis-Detector/main/docs/screenshots/company-distress.png" alt="AI Financial Crisis Detector dashboard comparing company-distress models on the held-out test" width="100%"></a>
+<a href="https://github.com/eliechahoud7/AI-Financial-Crisis-Detector"><img src="https://raw.githubusercontent.com/eliechahoud7/AI-Financial-Crisis-Detector/main/docs/screenshots/company-distress.png" alt="Financial Crisis Detector dashboard comparing company-distress models on the held-out test" width="100%"></a>
 
 A local, CPU-only research system combining market-stress scoring, company-distress classification, a grounded RAG assistant and a LangGraph workflow in a Streamlit dashboard. It needs no paid APIs or cloud services.
 
