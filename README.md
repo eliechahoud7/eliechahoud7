@@ -19,11 +19,11 @@ Artificial Intelligence · Machine Learning · Data Science · Generative AI · 
 
 ## About me
 
-I build end-to-end machine learning systems, from data pipelines and model training to serving, monitoring and evaluation. My main projects cover computer vision, LLM fine-tuning, retrieval-augmented generation and financial risk modelling.
+I build end-to-end data and AI solutions, combining machine learning, generative AI, data engineering and analytics to solve real-world problems. My work spans the full data lifecycle, from collecting and transforming data to building predictive models, designing data platforms, deploying applications and evaluating their performance.
 
-I also work on the data side that these systems depend on. That includes warehouses and layered pipelines (PostgreSQL/PostGIS, Databricks, dbt, Airflow), statistical and geospatial analysis, forecasting and BI dashboards.
+My projects cover a broad range of domains, including computer vision, LLM fine-tuning, retrieval-augmented generation, financial risk analysis, geospatial intelligence, data warehousing, predictive analytics and business intelligence. I work with technologies such as Python, PyTorch, Hugging Face Transformers, LangChain, PostgreSQL, PostGIS, Databricks, dbt, Airflow, PySpark and Power BI.
 
-All of my projects share one principle: **honest evaluation**. That means held-out test sets scored once, leakage checks, reproducible and validated pipelines, and limitations stated clearly next to the results.
+Across all my projects, I emphasize rigorous evaluation, reproducibility and engineering quality: validating data, preventing leakage, comparing models against meaningful baselines, building reliable pipelines and communicating limitations transparently.
 
 ## 🌐 My Portfolio
 
@@ -54,7 +54,7 @@ Technologies I have used in the projects below:
 
 ---
 
-## Featured projects
+## Projects
 
 ### 🖼️ DeepVision — End-to-end MLOps for image classification
 
@@ -137,40 +137,55 @@ A French/English question-answering assistant for PDF documents. It answers only
 
 ---
 
-## More projects
+### 🚦 Road Safety Intelligence — Geospatial road-accident analysis for France
 
-Data engineering, data science and geospatial projects.
-
-### 🚦 Road Safety Intelligence — France
+<a href="https://github.com/eliechahoud7/road-safety-intelligence"><img src="https://raw.githubusercontent.com/eliechahoud7/road-safety-intelligence/main/docs/images/01_national_overview.png" alt="Road Safety Intelligence Streamlit dashboard showing the national overview: injury accidents, persons killed, accidents per year and accidents by most severe outcome" width="100%"></a>
 
 A reproducible pipeline on the official French road-accident database (BAAC, ONISR, 2019–2025). It covers checksummed data acquisition, data-quality profiling, geographic validation against IGN boundaries, a PostgreSQL/PostGIS warehouse, statistical and geospatial hotspot analysis, and a Streamlit dashboard.
 
 - **Scale & quality:** 361,593 injury accidents in metropolitan France, 99.8% with exact or ≤ 500 m validated coordinates, 509 automated validation checks
 - **Hotspots:** 1% of non-empty 1 km cells hold 32.5% of accidents but only 6.2% of fatal accidents
+- **Severity:** night accidents are about twice as often fatal (10.0% vs 5.2%), and accidents outside built-up areas are 3.5× as often fatal (10.3% vs 3.0%; Cramér's V = 0.26)
+- **Warehouse:** layered PostGIS schema (staging → clean → analytics) with lineage and no double counting across one-to-many tables, served to a six-section Streamlit dashboard
 
-<sub>**Limitations:** results describe police-recorded injury accidents and where they concentrate, not risk, because no traffic-volume (exposure) data is available.</sub>
+<sub>**Limitations:** results describe police-recorded injury accidents and where they concentrate, not risk, because no traffic-volume (exposure) data is available. The analysis is descriptive only, with no causal claims or predictive modelling.</sub>
 
 `PostgreSQL` `PostGIS` `GeoPandas` `Shapely` `SciPy` `Streamlit` `Docker`
 
 **[Repository →](https://github.com/eliechahoud7/road-safety-intelligence)**
 
-### 🎓 Career Intelligence
+---
+
+### 🎓 Career Intelligence — Databricks data platform for career guidance
+
+<a href="https://github.com/eliechahoud7/career-intelligence"><img src="https://raw.githubusercontent.com/eliechahoud7/career-intelligence/main/docs/images/01-recherche-metier.png" alt="Career Intelligence Streamlit app searching ROME occupations for « infirmier », with domain and status filters and the matching occupations" width="100%"></a>
 
 A data platform that integrates six official French open datasets (ROME, ONISEP, Formacode, BMO and others) into a Databricks Bronze → Silver → Gold → Search model. It serves the data through a French-language Streamlit app for searching occupations, skills and training paths.
 
+- **Integration:** 39 Bronze Delta tables (one per source file), refined through Silver and Gold layers without inventing relationships between sources
 - **Serving:** 22 read-only SQL query contracts behind four application pages
 - **Validation:** 622 offline tests and 55 live Databricks tests passed; 325/325 SQL data-quality checks pass
+
+<sub>**Limitations:** the project runs on Databricks Free Edition and the application runs locally, with no public deployment. BMO recruitment figures are minimums because of statistical secrecy, and ONISEP training links cover 392 of the 1,923 ROME occupations.</sub>
 
 `Databricks` `Delta Lake` `Unity Catalog` `SQL` `Streamlit` `pytest`
 
 **[Repository →](https://github.com/eliechahoud7/career-intelligence)**
 
-### 🛒 Retail Intelligence
+---
+
+### 🛒 Retail Intelligence — End-to-end e-commerce analytics platform
+
+<a href="https://github.com/eliechahoud7/retail-intelligence"><img src="https://raw.githubusercontent.com/eliechahoud7/retail-intelligence/main/dashboards/screenshots/01_executive_overview.png" alt="Retail Intelligence Power BI Executive Overview dashboard with revenue, orders, on-time delivery and review KPIs, monthly revenue and late-delivery rate" width="100%"></a>
 
 An end-to-end analytics project on the Olist Brazilian e-commerce dataset (about 100,000 orders, 2016–2018). It builds a checksummed, layered pipeline into a PostgreSQL star schema with dbt marts, PySpark workloads and an Airflow DAG. On top of that come customer analytics, predictive modelling, forecasting, SHAP explanations and five Power BI dashboards validated against the warehouse.
 
+- **Warehouse:** PostgreSQL star schema with 7 analytics views, 20 parameterised SQL queries and 5 tested dbt marts; PySpark workloads and an idempotent Airflow DAG
 - **Delivery-time regression (random forest):** MAE 4.37 days, 17% better than the median baseline
 - **14-day order-volume forecast (Holt-Winters):** WAPE 0.214, 6.9% better than the seasonal-naive baseline
+- **BI:** five Power BI dashboards with every page KPI, slicer and drill-through cross-checked against PostgreSQL
+
+<sub>**Limitations:** the data is observational, so findings are descriptive and SHAP explains the models, not causes. Orders after 21 August 2018 are incomplete in the Olist extract. Late-delivery classification is weak (PR-AUC 0.088 against a 4.40% base rate).</sub>
 
 `PostgreSQL` `dbt` `PySpark` `Apache Airflow` `scikit-learn` `statsmodels` `SHAP` `Power BI`
 
