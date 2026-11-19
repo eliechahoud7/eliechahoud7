@@ -53,6 +53,24 @@ Technical skills, tools and methods developed through academic work and practica
 
 ## Projects
 
+### 🤖 Agentic Retail Data Analyst — Local multi-agent analytics assistant
+
+<a href="https://github.com/eliechahoud7/agentic-retail-analyst"><img src="https://raw.githubusercontent.com/eliechahoud7/agentic-retail-analyst/main/docs/images/answer-top-categories.png" alt="Agentic Retail Data Analyst Streamlit chat answering a question about the top 5 product categories by revenue, with a summary sentence and a ranked table" width="100%"></a>
+
+A local assistant that requires no paid API and answers plain-English business questions about the Olist e-commerce warehouse built in Retail Intelligence. Three LangGraph agents (Supervisor, Data Analyst, Analytics) run Qwen 2.5 1.5B through Ollama on a laptop with a 2 GB GPU, behind a Streamlit chat. The assistant is designed to refuse rather than guess.
+
+- **Constrained model:** the model only picks a metric and a grouping from a verified catalog (11 metrics, 6 groupings, 30 valid combinations). Code compiles and validates the SQL, runs it through a read-only PostgreSQL login, and writes the answer from the returned rows.
+- **Safe refusals:** causes, forecasts, unsupported filters and any wording the catalog can't account for are refused, with a reason, before any agent runs.
+- **Final regression (17, 32 and 49 questions):** **0 wrong answers**. Correct answers: 13, 13 and 1 (of 13, 18 and 4 answerable); correct refusals: 4, 14 and 45; safe failures: 0, 5 and 3. 164 tests.
+
+<sub>**Limitations:** all three question sets were used during development, so these results aren't independent validation. The scope is deliberately narrow: only 4 of 49 questions written without knowledge of the catalog fall within it. It's a local, single-user demo with no authentication.<br>**Future work:** possible next steps, not yet planned, are an evaluation on an independent question set written by someone else and a wider catalog covering more of the questions it currently refuses.</sub>
+
+`LangGraph` `LangChain` `Ollama` `PostgreSQL` `SQLAlchemy` `pandas` `Streamlit`
+
+**[Repository →](https://github.com/eliechahoud7/agentic-retail-analyst)**
+
+---
+
 ### 🖼️ DeepVision — End-to-end MLOps for image classification
 
 <a href="https://github.com/eliechahoud7/deepvision-mlops"><img src="https://raw.githubusercontent.com/eliechahoud7/deepvision-mlops/main/docs/screenshots/single-prediction.png" alt="DeepVision Streamlit interface classifying a forest photo" width="100%"></a>
